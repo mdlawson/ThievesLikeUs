@@ -5,6 +5,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThievesLikeUs", "ThievesLik
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThievesLikeUsContent", "ThievesLikeUs\ThievesLikeUsContent\ThievesLikeUsContent.contentproj", "{38AF20C4-AF49-4986-916D-CE071CD12B79}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{07DF4A01-A3F5-4FBE-A23A-38299B0D9728}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
