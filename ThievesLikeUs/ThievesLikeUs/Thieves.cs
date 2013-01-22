@@ -82,7 +82,7 @@ namespace ThievesLikeUs {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             currentScene.Draw(spriteBatch);
-
+            
             base.Draw(gameTime);
         }
     }
