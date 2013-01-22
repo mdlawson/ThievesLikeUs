@@ -16,6 +16,7 @@ namespace ThievesLikeUs {
     public class Thieves : Microsoft.Xna.Framework.Game {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        Scene.Scene currentScene;
 
         public Thieves() {
             graphics = new GraphicsDeviceManager(this);
@@ -30,6 +31,11 @@ namespace ThievesLikeUs {
         /// </summary>
         protected override void Initialize() {
             // TODO: Add your initialization logic here
+            currentScene = new Scene.Scene("level1", this);
+            var tester = new Entity.Entity("tester", new Vector2(0f,0f));
+            var uselessComponent = new Component.Component();
+            tester.Add(uselessComponent);
+            currentScene.Add(tester);
 
             base.Initialize();
         }
@@ -63,7 +69,7 @@ namespace ThievesLikeUs {
             if(GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
-            // TODO: Add your update logic here
+            currentScene.Update(gameTime);
 
             base.Update(gameTime);
         }
@@ -75,7 +81,7 @@ namespace ThievesLikeUs {
         protected override void Draw(GameTime gameTime) {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            // TODO: Add your drawing code here
+            currentScene.Draw(spriteBatch);
 
             base.Draw(gameTime);
         }
