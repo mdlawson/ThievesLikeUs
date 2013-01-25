@@ -10,6 +10,8 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 
 namespace ThievesLikeUs {
+
+    using Entities;
     /// <summary>
     /// This is the main type for your game
     /// </summary>
@@ -36,6 +38,9 @@ namespace ThievesLikeUs {
             var uselessComponent = new Component.Component();
             tester.Add(uselessComponent);
             currentScene.Add(tester);
+
+            //var level = Content.Load<Map>("tester");
+            //currentScene.Add(level);
 
             base.Initialize();
         }

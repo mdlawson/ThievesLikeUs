@@ -1,14 +1,16 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThievesLikeUs", "ThievesLikeUs\ThievesLikeUs\ThievesLikeUs.csproj", "{C1C0715D-0995-4958-9A4C-0C40F7A2682D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThievesLikeUs", "ThievesLikeUs\ThievesLikeUs.csproj", "{C1C0715D-0995-4958-9A4C-0C40F7A2682D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThievesLikeUsContent", "ThievesLikeUs\ThievesLikeUsContent\ThievesLikeUsContent.contentproj", "{38AF20C4-AF49-4986-916D-CE071CD12B79}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThievesLikeUsContent", "ThievesLikeUsContent\ThievesLikeUsContent.contentproj", "{38AF20C4-AF49-4986-916D-CE071CD12B79}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{07DF4A01-A3F5-4FBE-A23A-38299B0D9728}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThievesLikeUsPipeline", "ThievedLikeUsPipeline\ThievesLikeUsPipeline.csproj", "{1FC4618E-20E1-42A7-8F19-292F2066EA21}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,6 +24,10 @@ Global
 		{C1C0715D-0995-4958-9A4C-0C40F7A2682D}.Release|x86.Build.0 = Release|x86
 		{38AF20C4-AF49-4986-916D-CE071CD12B79}.Debug|x86.ActiveCfg = Debug|x86
 		{38AF20C4-AF49-4986-916D-CE071CD12B79}.Release|x86.ActiveCfg = Release|x86
+		{1FC4618E-20E1-42A7-8F19-292F2066EA21}.Debug|x86.ActiveCfg = Debug|x86
+		{1FC4618E-20E1-42A7-8F19-292F2066EA21}.Debug|x86.Build.0 = Debug|x86
+		{1FC4618E-20E1-42A7-8F19-292F2066EA21}.Release|x86.ActiveCfg = Release|x86
+		{1FC4618E-20E1-42A7-8F19-292F2066EA21}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

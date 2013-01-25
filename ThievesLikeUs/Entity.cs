@@ -14,10 +14,12 @@ namespace ThievesLikeUs.Entity {
         public string Name;
         public Vector2 Position;
         public List<Component> components;
-        public Entity(String name) {
-            this.Name = name;
+        public Entity() { 
             components = new List<Component>();
         }
+        public Entity(String name) : this() {
+            this.Name = name;
+        }    
         public Entity(String name, Vector2 position) : this(name) {
             this.Position = position;
         }
