@@ -19,6 +19,7 @@ namespace ThievesLikeUs {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Scene.Scene currentScene;
+        Map level;
 
         public Thieves() {
             graphics = new GraphicsDeviceManager(this);
@@ -39,7 +40,7 @@ namespace ThievesLikeUs {
             tester.Add(uselessComponent);
             currentScene.Add(tester);
 
-            //var level = Content.Load<Map>("tester");
+            
             //currentScene.Add(level);
 
             base.Initialize();
@@ -52,7 +53,7 @@ namespace ThievesLikeUs {
         protected override void LoadContent() {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
+            level = Content.Load<Map>("tester");
             // TODO: use this.Content to load your game content here
         }
 
@@ -87,7 +88,9 @@ namespace ThievesLikeUs {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             currentScene.Draw(spriteBatch);
-            
+            spriteBatch.Begin(SpriteSortMode.BackToFront, null, null, null, null, null, Matrix.CreateScale(2));
+            level.Layers[0].Draw(spriteBatch);
+            spriteBatch.End();
             base.Draw(gameTime);
         }
     }

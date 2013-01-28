@@ -10,29 +10,29 @@ using Microsoft.Xna.Framework.Graphics;
 using TiledLib;
 
 namespace ThievesLikeUsPipeline.Map {
-    [ContentSerializerRuntimeType("ThievesLikeUs.Entities.Tile, ThievesLikeUs.Entities")]
+    [ContentSerializerRuntimeType("ThievesLikeUs.Entities.Tile, ThievesLikeUs")]
     public class TileContent {
         public ExternalReference<Texture2DContent> Texture;
         public Rectangle Source;
         public Rectangle Destination;
         public SpriteEffects Effects;
     }
-    [ContentSerializerRuntimeType("ThievesLikeUs.Entities.Layer, ThievesLikeUs.Entities")]
+    [ContentSerializerRuntimeType("ThievesLikeUs.Entities.Layer, ThievesLikeUs")]
     public class LayerContent {
         //public MapContent Map; 
         public TileContent[] Tiles;
     }
-    [ContentSerializerRuntimeType("ThievesLikeUs.Entities.Map, ThievesLikeUs.Entities")]
+    [ContentSerializerRuntimeType("ThievesLikeUs.Entities.Map, ThievesLikeUs")]
     public class MapContent {
         public int TileWidth;
         public int TileHeight;
         public List<LayerContent> Layers = new List<LayerContent>();
     }
-    [ContentProcessor(DisplayName = "TMX Processor")]
+    [ContentProcessor(DisplayName = "TMX Processor - Thieves")]
     public class MapProcessor : ContentProcessor<TiledLib.MapContent, MapContent> {
         public override MapContent Process(TiledLib.MapContent input, ContentProcessorContext context) {
 
-            System.Diagnostics.Debugger.Launch();
+            //System.Diagnostics.Debugger.Launch();
 
             TiledHelpers.BuildTileSetTextures(input, context);
             TiledHelpers.GenerateTileSourceRectangles(input);
@@ -58,7 +58,7 @@ namespace ThievesLikeUsPipeline.Map {
                         foreach (var tileSet in input.TileSets) {
                             if (tileIndex - tileSet.FirstId < tileSet.Tiles.Count) {
                                 textureContent = tileSet.Texture;
-                                source = tileSet.Tiles[(int)(tileIndex - tileSet.FirstId)+1].Source;
+                                source = tileSet.Tiles[(int)(tileIndex - tileSet.FirstId)].Source;
                                 break;
                             }
                         }
@@ -66,7 +66,7 @@ namespace ThievesLikeUsPipeline.Map {
                         outLayer.Tiles[i] = new TileContent {
                             Texture = textureContent,
                             Source = source,
-                            Destination = new Rectangle(i % input.TileWidth, i / input.TileWidth, input.TileWidth, input.TileHeight),
+                            Destination = new Rectangle((i % tlc.Width)*input.TileWidth, (i / tlc.Width)*input.TileHeight, input.TileWidth, input.TileHeight),
                             Effects = effects
                         };
                     }

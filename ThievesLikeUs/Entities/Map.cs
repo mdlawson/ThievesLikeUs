@@ -14,25 +14,25 @@ namespace ThievesLikeUs.Entities {
         public Rectangle Destination;
         public SpriteEffects Effects;
     }
-    class Layer : Entity {
+    class Layer {
         public Tile[] Tiles;
         //public Map map;
-        public override void Draw(SpriteBatch spriteBatch) {
+        public void Draw(SpriteBatch spriteBatch) {
             foreach (Tile t in Tiles) {
                 spriteBatch.Draw(t.Texture, t.Destination, t.Source, Color.White, 0, Vector2.Zero, t.Effects, 0);
             }
         }
-        public override void Update(GameTime gameTime) { }
+        public void Update(GameTime gameTime) { }
     }
-    class Map : Entity {
+    class Map {
         public int TileWidth;
         public int TileHeight;
         public List<Layer> Layers = new List<Layer>();
 
-        public override void Draw(SpriteBatch spriteBatch) { 
+        public void Draw(SpriteBatch spriteBatch) { 
             foreach (Layer l in Layers) { l.Draw(spriteBatch); }
         }
-        public override void Update(GameTime gameTime) {
+        public void Update(GameTime gameTime) {
             foreach (Layer l in Layers) { l.Update(gameTime); }
         }
     }
